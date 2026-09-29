@@ -1,0 +1,184 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+    background-color: rgb(129, 125, 118);
+    margin: 0px;
+}
+h1{
+    padding: 20px;
+    text-shadow: 3px 3px 2px gray;
+    background-color: darkblue;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin: 0;
+}
+h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 35;
+    border-bottom: 5px solid plum;
+    padding-bottom: 10px;
+}
+p, li{
+    text-align: justify;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+ul,ol{
+    padding: 20px 40px;
+    background-color: rgb(60, 117, 148);
+    color: white;
+    border: 5px solid darkblue;
+    border-radius: 10px;
+}
+li{
+    margin-top: 20px;
+}
+img{
+    display: block;
+    width: 500px;
+    margin: auto;
+    border: 5px solid goldenrod;
+    border-radius: 15px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: beige;
+}
+th{
+    background-color: goldenrod;
+    text-align: center;
+    padding: 15px;
+    color: black;
+    border: 3px solid black;
+}
+td{
+    color: black;
+    border: 3px solid black;
+    padding: 15px;
+}
+a{
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+.grantexto{
+    background-color: purple;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0;
+    border-left: 15px solid plum;
+}
+hr{
+    border: 3px solid plum;
+}
+ul{
+    list-style: none;
+}
+ul li::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("icono.png");
+    background-size: contain;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+}
+.contenedorPrincipal{
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "encabezado encabezado"
+        "menu contenido"
+        "pie pie";
+}
+.piePagina{
+    background-color: whitesmoke;
+    color: black;
+    padding: 2px;
+    text-align: center;
+    font-size: 12px;
+    grid-area: pie;
+}
+.menu{
+    background-color: transparent;
+    border: none;
+    margin-top: 15px;
+    padding: 5px;
+    text-align: center;
+}
+.menu li::before{
+    display: none;
+}
+.menu li{
+    display: inline;
+    margin-right: 30px;
+}
+.menu a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu a:hover{
+    background-color: lightskyblue;
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+}
+.encabezado{
+    grid-area: encabezado;
+}
+.menuLateral{
+    grid-area: menu;
+    background-color: rgb(60, 117, 148);
+}
+.contenidoPrincipal{
+    grid-area: contenido;
+    background-color: lightgrey;
+    padding: 20px;
+    overflow-y: auto;
+    min-height: 0;
+}
+@media (max-width: 600px) {
+    .contenedorPrincipal{
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "encabezado"
+        "menu"
+        "contenido"
+        "pie";
+    }
+    body{
+        font-size: 12px;
+    }
+}
+@media (min-width: 600px) and (max-width: 900px){
+        .contenedorPrincipal{
+        width: 100%;
+        height: auto;
+        grid-template-areas: 150px 1fr 
+        "encabezado encabezado"
+        "contenido menu"
+        "pie pie";
+    }
+    body{
+        font-size: 16px;
+    }
+}
