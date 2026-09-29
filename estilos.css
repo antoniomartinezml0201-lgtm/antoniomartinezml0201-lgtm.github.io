@@ -89,7 +89,7 @@ ul li::before{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url("icono.png");
+    background-image: url("../img/icono.png");
     background-size: contain;
     margin-right: 15px;
     background-repeat: no-repeat;
